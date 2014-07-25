@@ -18,6 +18,11 @@ namespace BenhartLog.Windows
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// Displays a styled message in the logwinow
+		/// </summary>
+		/// <param name="text"></param>
+		/// <param name="style"></param>
 		public void StyledMessage(string text, LogStyle style)
 		{
 			if (ShowTime)

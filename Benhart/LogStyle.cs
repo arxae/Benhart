@@ -11,6 +11,11 @@ namespace BenhartLog
 		public bool Italic;
 		public LineStyle LineStyle;
 
+		/// <summary>
+		/// Creates a default style based uppon the severity level
+		/// </summary>
+		/// <param name="severity"></param>
+		/// <returns></returns>
 		public static LogStyle GetLogStyle(LogLevel severity)
 		{
 			var style = new LogStyle();
