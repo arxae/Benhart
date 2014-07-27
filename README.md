@@ -25,6 +25,13 @@ Benhart.Warning(text);
 Benhart.Error(text);
 ``` 
 
+You can also add values to the watch window by using
+``` csharp
+Benhart.SetWatch(name, value);
+```
+
+Updating the value can be done by the same method, just use the same name	
+
 The display and window can be configured using these properties:
 ``` csharp
 Benhart.Visbility

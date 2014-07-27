@@ -19,7 +19,13 @@ This will open up a Benhart log window. Writing to it is easy as well.
 	Benhart.Debug(text);
 	Benhart.Info(text);
 	Benhart.Warning(text);
-Benhart.Error(text);
+	Benhart.Error(text);
+	
+You can also add values to the watch window by using
+
+	Benhart.SetWatch(name, value);
+
+Updating the value can be done by the same method, just use the same name	
 
 The display and window can be configured using these properties:
 

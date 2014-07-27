@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
 
@@ -13,9 +16,14 @@ namespace BenhartLog.Windows
 		public string TimeFormat = "HH:mm:ss";
 		public string TimeMessageSepparator = " | ";
 
+		private ObservableCollection<WatchEntry> Watches;
+
 		public BenhartLogWindow()
 		{
 			InitializeComponent();
+
+			Watches = new ObservableCollection<WatchEntry>();
+			WatchGrid.ItemsSource = Watches;
 		}
 
 		/// <summary>
@@ -54,6 +62,27 @@ namespace BenhartLog.Windows
 			}
 
 			LogTextBox.ScrollToEnd();
+		}
+
+		/// <summary>
+		/// Sets a value in the watch window
+		/// </summary>
+		/// <param name="name"></param>
+		/// <param name="value"></param>
+		public void SetWatch(string name, string value)
+		{
+			var item = Watches.FirstOrDefault(i => i.WatchName == name);
+
+			if (item == null)
+			{
+				Watches.Add(new WatchEntry(name, value));
+			}
+			else
+			{
+				item.WatchValue = value;
+				WatchGrid.ItemsSource = null;
+				WatchGrid.ItemsSource = Watches;
+			}
 		}
 	}
 }

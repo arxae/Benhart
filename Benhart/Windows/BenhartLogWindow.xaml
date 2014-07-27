@@ -6,9 +6,15 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*" />
 			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
 
-		<RichTextBox x:Name="LogTextBox" Background="WhiteSmoke">
+		<!-- Logwindow -->
+		<RichTextBox x:Name="LogTextBox" Background="WhiteSmoke" IsReadOnly="True">
 			<RichTextBox.Resources>
 				<Style TargetType="{x:Type Paragraph}">
 					<Setter Property="Margin" Value="0"/>
@@ -16,7 +22,22 @@
 			</RichTextBox.Resources>
 		</RichTextBox>
 
-		<Grid Grid.Row="1">
+		<GridSplitter HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Top" 
+                  Grid.Row="1" ResizeBehavior="PreviousAndNext"
+                  Height="2" Background="WhiteSmoke"/>
+
+		<!-- Watch window -->
+		<ListView Grid.Row="2" x:Name="WatchGrid">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn Header="Name" DisplayMemberBinding="{Binding WatchName}" Width="75" />
+					<GridViewColumn Header="Value" DisplayMemberBinding="{Binding WatchValue}" Width="200" />
+				</GridView>
+			</ListView.View>
+		</ListView>
+
+		<Grid Grid.Row="3" Grid.Column="0">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="50" />

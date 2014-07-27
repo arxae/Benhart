@@ -63,6 +63,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="WatchEntry.cs" />
     <Compile Include="Windows\BenhartLogWindow.xaml.cs">
       <DependentUpon>BenhartLogWindow.xaml</DependentUpon>
     </Compile>

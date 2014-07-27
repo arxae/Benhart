@@ -70,6 +70,16 @@ namespace BenhartLog
 			IsAttached = false;
 		}
 
+		/// <summary>
+		/// Sets a watch value. If the watchname already exists, then the value will be updated
+		/// </summary>
+		/// <param name="watchname"></param>
+		/// <param name="watchvalue"></param>
+		public static void SetWatch(string watchname, string watchvalue)
+		{
+			LogWindow.SetWatch(watchname, watchvalue);
+		}
+
 		// Settings
 		/// <summary>
 		/// Controls the visibility of the logwindow.
