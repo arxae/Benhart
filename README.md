@@ -29,6 +29,7 @@ You can also add values to the watch window by using
 ``` csharp
 Benhart.SetWatch(name, value);
 ```
+Updating the value can be done by the same method, just use the same name
 
 Using the BenhartMarkdown class, you can output markdown. This markdown can be converted to HTML with your favorite markdown parser.
 In every entry, title is optional but will default to what is outputed (eg: "List: " for lists)
@@ -38,9 +39,7 @@ BenhartMarkdown.NumberedList(LogLevel, IEnumerable, title)
 BenhartMarkdown.BulletList(LogLevel, IEnumerable, title)
 BenhartMarkdown.Paragraph(LogLevel, text, title)
 ```
-If you just want to copy/paste the output for HTML, then you should keep in mind the time output. Normally, Benhart outputs the time with each call, this is not Markdown and will not be parsed. To circumvent this, manually remove the time entries or turn of time output completely by setting Benhart.ShowTime to false.
-
-Updating the value can be done by the same method, just use the same name	
+If you just want to copy/paste the output for HTML, then you should keep in mind the time output. Normally, Benhart outputs the time with each call, this is not Markdown and will not be parsed. To circumvent this, manually remove the time entries or turn of time output completely by setting Benhart.ShowTime to false.	
 
 The display and window can be configured using these properties:
 ``` csharp
