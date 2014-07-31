@@ -3,6 +3,11 @@ using BenhartLog.MarkdownLog;
 
 namespace BenhartLog
 {
+	/// <summary>
+	/// Outputs Markdown instead of regular text
+	/// Uses MarkdownLog by Wheelies: https://github.com/Wheelies/MarkdownLog
+	/// </summary>
+	/// TODO: less code repetition but make sure the value is updated after first call 
 	public static class BenhartMarkdown
 	{
 		public static void Table<T>(LogLevel severity, IEnumerable<T> enumerable, string title = "Table: ")
