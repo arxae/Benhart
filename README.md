@@ -1,4 +1,4 @@
-Benhart
+Benhart [![Build status](https://ci.appveyor.com/api/projects/status/hpn5ro6k640bt164)](https://ci.appveyor.com/project/arxae/benhart)
 =======
 Benhart is a logwindow that can be attached to any WPF window (for now). It was inspired by the PCSX2 logwindow.
 
