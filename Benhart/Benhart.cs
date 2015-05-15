@@ -1,17 +1,45 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Controls;
 using BenhartLog.Windows;
+using BenhartLog.Windows.Pages;
 
 namespace BenhartLog
 {
 	public static class Benhart
 	{
+		private static BenhartLogWindow _logWindowInstance;
+		internal static BenhartLogWindow Window => _logWindowInstance ?? (_logWindowInstance = new BenhartLogWindow());
+
+		internal static MainLogWindowPage LogPage { get; set; }
+
+		private static Dictionary<string, LogStyle> _dicStylesInstance;
+		public static Dictionary<string, LogStyle> Styles => _dicStylesInstance ?? (_dicStylesInstance = new Dictionary<string, LogStyle>());
+
+		private static Dictionary<string, Page> _dicCustomPagesInstance;
+		internal static Dictionary<string, Page> CustomPages => _dicCustomPagesInstance ?? (_dicCustomPagesInstance = new Dictionary<string, Page>());
+
 		private static Window _parentWindow;
-		private static bool IsAttached;
+		private static bool _isAttached;
 
-		private static BenhartLogWindow _instance;
-		private static BenhartLogWindow LogWindow { get { return _instance ?? (_instance = new BenhartLogWindow()); } }
+		// ===		WINDOW MANAGEMENT	===
+		public static void Show()
+		{
+			Window.Show();
+		}
 
-		// Log control methods
+		public static void Hide()
+		{
+			Window.Hide();
+		}
+
+		public static void SetPosition(int left, int top)
+		{
+			Window.Left = left;
+			Window.Top = top;
+		}
+
 		/// <summary>
 		/// Attaches to the specified window. Logwindow will attach itself to the right side of the parent window and follow it around
 		/// </summary>
@@ -23,33 +51,20 @@ namespace BenhartLog
 			_parentWindow.SizeChanged += (s, e) => UpdatePosition();
 			_parentWindow.Closing += (s, e) => // do not close the window when it is not attached
 			{
-				if (IsAttached) LogWindow.Close();
-				else _parentWindow = null;
+				if (_isAttached)
+				{
+					Window.AllowExit = true;
+					Window.Close();
+				}
+				else
+				{
+					_parentWindow = null;
+				}
 			};
 
-			IsAttached = true;
+			_isAttached = true;
 			UpdatePosition();
-			LogWindow.Show();
-		}
-
-		/// <summary>
-		/// Open the logwindow at a specified position
-		/// </summary>
-		/// <param name="left">Left coordinate</param>
-		/// <param name="top">Top coordinate</param>
-		public static void OpenAt(int left, int top)
-		{
-			Open();
-			LogWindow.Left = left;
-			LogWindow.Top = top;
-		}
-
-		/// <summary>
-		/// Show the log window
-		/// </summary>
-		public static void Open()
-		{
-			LogWindow.Show();
+			Window.Show();
 		}
 
 		/// <summary>
@@ -58,7 +73,7 @@ namespace BenhartLog
 		public static void Attach()
 		{
 			if (_parentWindow == null) return;
-			IsAttached = true;
+			_isAttached = true;
 			UpdatePosition();
 		}
 
@@ -67,126 +82,28 @@ namespace BenhartLog
 		/// </summary>
 		public static void Detach()
 		{
-			IsAttached = false;
+			_isAttached = false;
 		}
 
 		/// <summary>
-		/// Sets a watch value. If the watchname already exists, then the value will be updated
+		/// Updates the position in correspondance to the parent.
 		/// </summary>
-		/// <param name="watchname"></param>
-		/// <param name="watchvalue"></param>
-		public static void SetWatch(string watchname, string watchvalue)
+		private static void UpdatePosition()
 		{
-			LogWindow.SetWatch(watchname, watchvalue);
+			if (_isAttached == false) return;
+			Window.Left = _parentWindow.Left + _parentWindow.Width;
+			Window.Top = _parentWindow.Top;
 		}
 
-		// Settings
-		/// <summary>
-		/// Controls the visibility of the logwindow.
-		/// </summary>
-		public static Visibility Visbility
-		{
-			get { return LogWindow.Visibility; }
-			set { LogWindow.Visibility = value; }
-		}
-
-		/// <summary>
-		/// Should the logwindow have it's own taskbar icon?
-		/// </summary>
-		public static bool ShowInTaskbar
-		{
-			get { return LogWindow.ShowInTaskbar; }
-			set { LogWindow.ShowInTaskbar = value; }
-		}
-
-		/// <summary>
-		/// Set the left coordinate
-		/// </summary>
-		public static double Left
-		{
-			get { return LogWindow.Left; }
-			set { LogWindow.Left = value; }
-		}
-
-		/// <summary>
-		/// Set the top coordinate
-		/// </summary>
-		public static double Top
-		{
-			get { return LogWindow.Top; }
-			set { LogWindow.Top = value; }
-		}
-
-		/// <summary>
-		/// Set the width
-		/// </summary>
-		public static double Width
-		{
-			get { return LogWindow.Width; }
-			set { LogWindow.Width = value; }
-		}
-
-		/// <summary>
-		/// Set the height
-		/// </summary>
-		public static double Height
-		{
-			get { return LogWindow.Height; }
-			set { LogWindow.Height = value; }
-		}
-
-		/// <summary>
-		/// Should the log automatically include a timestamp?
-		/// </summary>
-		public static bool ShowTime
-		{
-			get { return LogWindow.ShowTime; }
-			set { LogWindow.ShowTime = value; }
-		}
-
-		/// <summary>
-		/// Override the time format string (default: HH:mm:ss)
-		/// </summary>
-		public static string TimeFormat
-		{
-			get { return LogWindow.TimeFormat; }
-			set { LogWindow.TimeFormat = value; }
-		}
-
-		/// <summary>
-		/// Override the timestamp and message sepparator. Includes spacing (default: " | ")
-		/// </summary>
-		public static string TimeMessageSepparator
-		{
-			get { return LogWindow.TimeMessageSepparator; }
-			set { LogWindow.TimeMessageSepparator = value; }
-		}
-
-		public static string LogWindowHeader
-		{
-			get { return LogWindow.Title; }
-			set { LogWindow.Title = value; }
-		}
-
-		// Write methods
-		/// <summary>
-		/// Writes to specified text to the log using a specific level
-		/// </summary>
-		/// <param name="level">Severity level</param>
-		/// <param name="text">Text that should be written</param>
-		public static void Log(LogLevel level, string text)
-		{
-			LogWindow.StyledMessage(text, LogStyle.GetLogStyle(level));
-		}
-
-		/// <summary>
-		/// Write a message with a custom style to the log
-		/// </summary>
-		/// <param name="text">Text that should be written</param>
-		/// <param name="style">A object containing the styling information</param>
+		// ===		LOG WRITING			===
 		public static void Log(string text, LogStyle style)
 		{
-			LogWindow.StyledMessage(text, style);
+			LogPage.WriteStyledMessage(text, style);
+		}
+
+		public static void Log(string text, string styleName)
+		{
+			LogPage.WriteStyledMessage(text, GetLogStyle(styleName));
 		}
 
 		// Quick log methods
@@ -196,7 +113,7 @@ namespace BenhartLog
 		/// <param name="text"></param>
 		public static void Debug(string text)
 		{
-			LogWindow.StyledMessage(text, LogStyle.GetLogStyle(LogLevel.Debug));
+			LogPage.WriteStyledMessage(text, LogStyle.GetLogStyle(LogLevel.Debug));
 		}
 
 		/// <summary>
@@ -205,7 +122,7 @@ namespace BenhartLog
 		/// <param name="text"></param>
 		public static void Message(string text)
 		{
-			LogWindow.StyledMessage(text, LogStyle.GetLogStyle(LogLevel.Message));
+			LogPage.WriteStyledMessage(text, LogStyle.GetLogStyle(LogLevel.Message));
 		}
 
 		/// <summary>
@@ -214,7 +131,7 @@ namespace BenhartLog
 		/// <param name="text"></param>
 		public static void Info(string text)
 		{
-			LogWindow.StyledMessage(text, LogStyle.GetLogStyle(LogLevel.Info));
+			LogPage.WriteStyledMessage(text, LogStyle.GetLogStyle(LogLevel.Info));
 		}
 
 		/// <summary>
@@ -223,7 +140,7 @@ namespace BenhartLog
 		/// <param name="text"></param>
 		public static void Warning(string text)
 		{
-			LogWindow.StyledMessage(text, LogStyle.GetLogStyle(LogLevel.Warning));
+			LogPage.WriteStyledMessage(text, LogStyle.GetLogStyle(LogLevel.Warning));
 		}
 
 		/// <summary>
@@ -232,18 +149,92 @@ namespace BenhartLog
 		/// <param name="text"></param>
 		public static void Error(string text)
 		{
-			LogWindow.StyledMessage(text, LogStyle.GetLogStyle(LogLevel.Error));
+			LogPage.WriteStyledMessage(text, LogStyle.GetLogStyle(LogLevel.Error));
 		}
 
-		// Private methods
+		// ===		WATCHES				===
 		/// <summary>
-		/// Updates the position in correspondance to the parent.
+		/// Sets a watch value. If the watchname already exists, then the value will be updated
 		/// </summary>
-		private static void UpdatePosition()
+		/// <param name="watchName"></param>
+		/// <param name="watchValue"></param>
+		public static void SetWatch(string watchName, object watchValue)
 		{
-			if (IsAttached == false) return;
-			LogWindow.Left = _parentWindow.Left + _parentWindow.Width;
-			LogWindow.Top = _parentWindow.Top;
+			LogPage.SetWatch(watchName, watchValue);
+		}
+
+		// ===		STYLE MANAGEMENT	===
+		/// <summary>
+		/// Gets a specific logstyle from the styles dictionary
+		/// </summary>
+		/// <param name="styleName">The name of the style</param>
+		/// <param name="throwExceptionOnFail">If the style can't be find, throw an exception?</param>
+		/// <returns>The style corresponding to styleName. If the style cannot be found, a default style will be returned</returns>
+		public static LogStyle GetLogStyle(string styleName, bool throwExceptionOnFail = false)
+		{
+			if (Styles.ContainsKey(styleName))
+			{
+				return Styles[styleName];
+			}
+
+			if (throwExceptionOnFail)
+			{
+				throw new Exception($"The style \"{styleName}\" was not found.");
+			}
+
+			return LogStyle.GetDefaultStyle();
+		}
+
+		/// <summary>
+		/// Add a style to the style dictionaru
+		/// </summary>
+		/// <param name="styleName">The name of the style</param>
+		/// <param name="style">A LogStyle object conaining the style information</param>
+		/// <param name="overwriteIfExists">If the style already exists, replace it?</param>
+		/// <param name="throwExceptionOnFail">If the style aready exists, throw an exception (If overwriteIfExists is set to true, this will be ignored)</param>
+		public static void AddLogStyle(string styleName, LogStyle style, bool overwriteIfExists = false, bool throwExceptionOnFail = false)
+		{
+			bool exists = Styles.ContainsKey(styleName);
+
+			if (exists && overwriteIfExists)
+			{
+				Styles.Remove(styleName);
+			}
+
+			if (exists && !overwriteIfExists && throwExceptionOnFail)
+			{
+				throw new Exception($"The style \"{styleName}\" already exists.");
+			}
+
+			Styles.Add(styleName, style);
+		}
+
+
+
+		// // // // // //
+		// TEST AREA   //
+		// // // // // //
+		public static void AddPage(string pageName, Page pageItem)
+		{
+			if (CustomPages.ContainsKey(pageName)) return;
+
+			CustomPages.Add(pageName, pageItem);
+			Window.AddPage(pageName);
+		}
+
+		public static T GetPage<T>(string pageName, bool throwExceptionOnFail = false) where T : Page
+		{
+			if (CustomPages.ContainsKey(pageName))
+			{
+				return (T)CustomPages[pageName];
+			}
+
+			if (throwExceptionOnFail)
+			{
+				throw new Exception($"Page {pageName} was not found.");
+			}
+
+			return null;
 		}
 	}
 }

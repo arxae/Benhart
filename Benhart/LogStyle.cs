@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Media;
+﻿using System.Windows.Media;
 
 namespace BenhartLog
 {
@@ -7,43 +6,34 @@ namespace BenhartLog
 	{
 		public SolidColorBrush ForegroundColor;
 		public SolidColorBrush BackgroundColor;
-		public bool Bold;
-		public bool Italic;
+		public bool IsBold;
+		public bool IsItalic;
 		public LineStyle LineStyle;
 
-		/// <summary>
-		/// Creates a default style based uppon the severity level
-		/// </summary>
-		/// <param name="severity"></param>
-		/// <returns></returns>
 		public static LogStyle GetLogStyle(LogLevel severity)
 		{
-			var style = new LogStyle();
 			switch (severity)
 			{
-				case LogLevel.Message:
-					style.Bold = true;
-					style.ForegroundColor = Brushes.Black;
-					break;
-				case LogLevel.Debug:
-					style.Bold = true;
-					style.ForegroundColor = Brushes.Green;
-					break;
-				case LogLevel.Info:
-					style.Bold = true;
-					style.ForegroundColor = Brushes.Blue;
-					break;
-				case LogLevel.Warning:
-					style.Bold = true;
-					style.ForegroundColor = Brushes.Orange;
-					break;
-				case LogLevel.Error:
-					style.Bold = true;
-					style.ForegroundColor = Brushes.Red;
-					break;
+				case LogLevel.Message: return Benhart.Styles["LogMessage"];
+				case LogLevel.Debug: return Benhart.Styles["LogMessage"];
+				case LogLevel.Info: return Benhart.Styles["LogMessage"];
+				case LogLevel.Warning: return Benhart.Styles["LogMessage"];
+				case LogLevel.Error: return Benhart.Styles["LogMessage"];
 			}
 
-			return style;
+			return GetDefaultStyle();
+		}
+
+		public static LogStyle GetDefaultStyle()
+		{
+			return new LogStyle
+			{
+				BackgroundColor = Brushes.Transparent,
+				ForegroundColor = Brushes.Black,
+				IsBold = false,
+				IsItalic = false,
+				LineStyle = LineStyle.None
+			};
 		}
 	}
 }

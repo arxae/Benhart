@@ -1,87 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Windows;
-using System.Windows.Documents;
+﻿using System.Windows.Controls;
 
 namespace BenhartLog.Windows
 {
-	/// <summary>
-	/// Interaction logic for LogWindow.xaml
-	/// </summary>
 	public partial class BenhartLogWindow
 	{
-		public bool ShowTime = true;
-		public string TimeFormat = "HH:mm:ss";
-		public string TimeMessageSepparator = " | ";
-
-		private ObservableCollection<WatchEntry> Watches;
+		internal bool AllowExit = false;
 
 		public BenhartLogWindow()
 		{
 			InitializeComponent();
 
-			Watches = new ObservableCollection<WatchEntry>();
-			WatchGrid.ItemsSource = Watches;
+			// TODO: Temporary fix because the XAML event threw errors
+			Closing += Window_Closing;
+
+			// Set the correct logpage and load it into the correct frame
+			Benhart.LogPage = new Pages.MainLogWindowPage();
+			MainTabFrame.Content = Benhart.LogPage;
+			MainTab.Visibility = System.Windows.Visibility.Collapsed;
 		}
 
-		/// <summary>
-		/// Displays a styled message in the logwinow
-		/// </summary>
-		/// <param name="text"></param>
-		/// <param name="style"></param>
-		public void StyledMessage(string text, LogStyle style)
+		// Prevent the window itself from closing unless the propper signal has been given
+		private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
 		{
-			if (ShowTime)
+			e.Cancel = !AllowExit;
+
+			if (AllowExit == false)
 			{
-				text = DateTime.Now.ToString(TimeFormat) + TimeMessageSepparator + text;
+				Hide();
 			}
-
-			var range = new TextRange(LogTextBox.Document.ContentEnd, LogTextBox.Document.ContentEnd) { Text = text + Environment.NewLine };
-
-			if (style.ForegroundColor != null) range.ApplyPropertyValue(TextElement.ForegroundProperty, style.ForegroundColor);
-			if (style.BackgroundColor != null) range.ApplyPropertyValue(TextElement.BackgroundProperty, style.BackgroundColor);
-			if (style.Bold) range.ApplyPropertyValue(TextElement.FontWeightProperty, "Bold");
-			if (style.Italic) range.ApplyPropertyValue(TextElement.FontStyleProperty, "Italic");
-
-			if (style.LineStyle != LineStyle.None)
-			{
-				switch (style.LineStyle)
-				{
-					case LineStyle.Overline:
-						range.ApplyPropertyValue(Inline.TextDecorationsProperty, TextDecorations.OverLine);
-						break;
-					case LineStyle.Striketrough:
-						range.ApplyPropertyValue(Inline.TextDecorationsProperty, TextDecorations.Strikethrough);
-						break;
-					case LineStyle.Underline:
-						range.ApplyPropertyValue(Inline.TextDecorationsProperty, TextDecorations.Underline);
-						break;
-				}
-			}
-
-			LogTextBox.ScrollToEnd();
 		}
 
-		/// <summary>
-		/// Sets a value in the watch window
-		/// </summary>
-		/// <param name="name"></param>
-		/// <param name="value"></param>
-		public void SetWatch(string name, string value)
+		public void AddPage(string pageName)
 		{
-			var item = Watches.FirstOrDefault(i => i.WatchName == name);
+			var page = Benhart.CustomPages[pageName];
+			var tab = new TabItem { Header = pageName };
+			var frame = new Frame { Content = page };
 
-			if (item == null)
+			tab.Content = frame;
+			TabControl.Items.Add(tab);
+
+			if (MainTab.Visibility == System.Windows.Visibility.Collapsed)
 			{
-				Watches.Add(new WatchEntry(name, value));
-			}
-			else
-			{
-				item.WatchValue = value;
-				WatchGrid.ItemsSource = null;
-				WatchGrid.ItemsSource = Watches;
+				MainTab.Visibility = System.Windows.Visibility.Visible;
 			}
 		}
 	}

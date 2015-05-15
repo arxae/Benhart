@@ -1,20 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D03CF064-77AF-43EF-AF44-5A457F8653A6}</ProjectGuid>
-    <OutputType>library</OutputType>
+    <ProjectGuid>{C69B40E9-E383-4E30-9B0B-A636EA58792F}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BenhartLog</RootNamespace>
     <AssemblyName>Benhart</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,12 +26,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -39,6 +45,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -48,48 +55,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Benhart.cs" />
-    <Compile Include="BenhartMarkdown.cs" />
-    <Compile Include="LogEnums.cs" />
+    <Compile Include="BenhartWindowOptions.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="LogStyle.cs" />
-    <Compile Include="MarkdownLog\BarChart.cs" />
-    <Compile Include="MarkdownLog\BarChartDataPoint.cs" />
-    <Compile Include="MarkdownLog\BlockQuote.cs" />
-    <Compile Include="MarkdownLog\BulletedList.cs" />
-    <Compile Include="MarkdownLog\CodeBlock.cs" />
-    <Compile Include="MarkdownLog\EmptyTableCell.cs" />
-    <Compile Include="MarkdownLog\Header.cs" />
-    <Compile Include="MarkdownLog\HeaderBase.cs" />
-    <Compile Include="MarkdownLog\HorizontalRule.cs" />
-    <Compile Include="MarkdownLog\IIosTableViewCell.cs" />
-    <Compile Include="MarkdownLog\IIosTableViewHeaderCell.cs" />
-    <Compile Include="MarkdownLog\IMarkdownElement.cs" />
-    <Compile Include="MarkdownLog\IosTableViewCell.cs" />
-    <Compile Include="MarkdownLog\IosTableViewCheckmarkCell.cs" />
-    <Compile Include="MarkdownLog\IosTableViewHeaderCell.cs" />
-    <Compile Include="MarkdownLog\ITableCell.cs" />
-    <Compile Include="MarkdownLog\ListBase.cs" />
-    <Compile Include="MarkdownLog\ListItem.cs" />
-    <Compile Include="MarkdownLog\MarkDownBuilderExtensions.cs" />
-    <Compile Include="MarkdownLog\MarkdownContainer.cs" />
-    <Compile Include="MarkdownLog\MarkdownElement.cs" />
-    <Compile Include="MarkdownLog\MarkdownToHtmlConverter.cs" />
-    <Compile Include="MarkdownLog\MarkdownToHtmlExtensions.cs" />
-    <Compile Include="MarkdownLog\NumberedList.cs" />
-    <Compile Include="MarkdownLog\NumberExtensions.cs" />
-    <Compile Include="MarkdownLog\Paragraph.cs" />
-    <Compile Include="MarkdownLog\RawMarkdown.cs" />
-    <Compile Include="MarkdownLog\ReflectionExtensions.cs" />
-    <Compile Include="MarkdownLog\StringExtensions.cs" />
-    <Compile Include="MarkdownLog\SubHeader.cs" />
-    <Compile Include="MarkdownLog\Table.cs" />
-    <Compile Include="MarkdownLog\TableCell.cs" />
-    <Compile Include="MarkdownLog\TableCellRenderSpecification.cs" />
-    <Compile Include="MarkdownLog\TableColumn.cs" />
-    <Compile Include="MarkdownLog\TableColumnAlignment.cs" />
-    <Compile Include="MarkdownLog\TableRow.cs" />
-    <Compile Include="MarkdownLog\TableView.cs" />
-    <Compile Include="MarkdownLog\TableViewCellAccessory.cs" />
-    <Compile Include="MarkdownLog\TableViewSection.cs" />
+    <Compile Include="Windows\Pages\MainLogWindowPage.xaml.cs">
+      <DependentUpon>MainLogWindowPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+    <Compile Include="WatchEntry.cs" />
+    <Page Include="Windows\BenhartLogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Windows\BenhartLogWindow.xaml.cs">
+      <DependentUpon>BenhartLogWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\Pages\MainLogWindowPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -103,10 +90,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="WatchEntry.cs" />
-    <Compile Include="Windows\BenhartLogWindow.xaml.cs">
-      <DependentUpon>BenhartLogWindow.xaml</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -117,12 +100,8 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Page Include="Windows\BenhartLogWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

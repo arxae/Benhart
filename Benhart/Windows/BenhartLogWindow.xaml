@@ -1,53 +1,17 @@
 ﻿<Window x:Class="BenhartLog.Windows.BenhartLogWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
         Title="Benhart" Height="500" Width="400">
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="*" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height=".25*" />
-			<RowDefinition Height="Auto" />
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="*" />
-		</Grid.ColumnDefinitions>
-
-		<!-- Logwindow -->
-		<RichTextBox x:Name="LogTextBox" Background="WhiteSmoke" IsReadOnly="True" 
-					 FontFamily="Consolas"
-					 ScrollViewer.VerticalScrollBarVisibility="Auto">
-			<RichTextBox.Resources>
-				<Style TargetType="{x:Type Paragraph}">
-					<Setter Property="Margin" Value="0"/>
-					<Setter Property="TextIndent" Value="0"/>
-				</Style>
-			</RichTextBox.Resources>
-		</RichTextBox>
-
-		<GridSplitter HorizontalAlignment="Stretch" 
-                  VerticalAlignment="Top" 
-                  Grid.Row="1" ResizeBehavior="PreviousAndNext"
-                  Height="2" Background="WhiteSmoke"/>
-
-		<!-- Watch window -->
-		<ListView Grid.Row="2" x:Name="WatchGrid">
-			<ListView.View>
-				<GridView>
-					<GridViewColumn Header="Name" DisplayMemberBinding="{Binding WatchName}" Width="75" />
-					<GridViewColumn Header="Value" DisplayMemberBinding="{Binding WatchValue}" Width="200" />
-				</GridView>
-			</ListView.View>
-		</ListView>
-
-		<Grid Grid.Row="3" Grid.Column="0">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="50" />
-			</Grid.ColumnDefinitions>
-
-			<TextBox Grid.Column="0" />
-			<Button Grid.Column="1" Content="Input" />
-		</Grid>
+	<Grid x:Name="MainGrid">
+		<TabControl x:Name="TabControl">
+			<TabItem x:Name="MainTab" Header="Benhart">
+				<Frame x:Name="MainTabFrame">
+					
+				</Frame>
+			</TabItem>
+		</TabControl>
 	</Grid>
 </Window>
