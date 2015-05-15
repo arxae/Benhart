@@ -55,9 +55,65 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Benhart.cs" />
+    <Compile Include="BenhartMD.cs" />
     <Compile Include="BenhartWindowOptions.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="LogStyle.cs" />
+    <Compile Include="MarkdownLog\BarChart.cs" />
+    <Compile Include="MarkdownLog\BarChartDataPoint.cs" />
+    <Compile Include="MarkdownLog\BlockQuote.cs" />
+    <Compile Include="MarkdownLog\BulletedList.cs" />
+    <Compile Include="MarkdownLog\CodeBlock.cs" />
+    <Compile Include="MarkdownLog\EmptyTableCell.cs" />
+    <Compile Include="MarkdownLog\GanttChart.cs" />
+    <Compile Include="MarkdownLog\GanttChartActivity.cs" />
+    <Compile Include="MarkdownLog\Header.cs" />
+    <Compile Include="MarkdownLog\HeaderBase.cs" />
+    <Compile Include="MarkdownLog\HorizontalRule.cs" />
+    <Compile Include="MarkdownLog\IIosTableViewCell.cs" />
+    <Compile Include="MarkdownLog\IIosTableViewHeaderCell.cs" />
+    <Compile Include="MarkdownLog\IMarkdownElement.cs" />
+    <Compile Include="MarkdownLog\IosTableViewCell.cs" />
+    <Compile Include="MarkdownLog\IosTableViewCheckmarkCell.cs" />
+    <Compile Include="MarkdownLog\IosTableViewHeaderCell.cs" />
+    <Compile Include="MarkdownLog\ITableCell.cs" />
+    <Compile Include="MarkdownLog\ListBase.cs" />
+    <Compile Include="MarkdownLog\ListItem.cs" />
+    <Compile Include="MarkdownLog\MarkDownBuilderExtensions.cs" />
+    <Compile Include="MarkdownLog\MarkdownContainer.cs" />
+    <Compile Include="MarkdownLog\MarkdownDeep\Abbreviation.cs" />
+    <Compile Include="MarkdownLog\MarkdownDeep\Block.cs" />
+    <Compile Include="MarkdownLog\MarkdownDeep\BlockProcessor.cs" />
+    <Compile Include="MarkdownLog\MarkdownDeep\FootnoteReference.cs" />
+    <Compile Include="MarkdownLog\MarkdownDeep\HtmlTag.cs" />
+    <Compile Include="MarkdownLog\MarkdownDeep\LinkDefinition.cs" />
+    <Compile Include="MarkdownLog\MarkdownDeep\LinkInfo.cs" />
+    <Compile Include="MarkdownLog\MarkdownDeep\MardownDeep.cs" />
+    <Compile Include="MarkdownLog\MarkdownDeep\SpanFormatter.cs" />
+    <Compile Include="MarkdownLog\MarkdownDeep\StringScanner.cs" />
+    <Compile Include="MarkdownLog\MarkdownDeep\TableSpec.cs" />
+    <Compile Include="MarkdownLog\MarkdownDeep\Token.cs" />
+    <Compile Include="MarkdownLog\MarkdownDeep\Utils.cs" />
+    <Compile Include="MarkdownLog\MarkdownElement.cs" />
+    <Compile Include="MarkdownLog\MarkdownToHtmlConverter.cs" />
+    <Compile Include="MarkdownLog\MarkdownToHtmlExtensions.cs" />
+    <Compile Include="MarkdownLog\NumberedList.cs" />
+    <Compile Include="MarkdownLog\NumberExtensions.cs" />
+    <Compile Include="MarkdownLog\Paragraph.cs" />
+    <Compile Include="MarkdownLog\RawMarkdown.cs" />
+    <Compile Include="MarkdownLog\ReflectionExtensions.cs" />
+    <Compile Include="MarkdownLog\StringExtensions.cs" />
+    <Compile Include="MarkdownLog\SubHeader.cs" />
+    <Compile Include="MarkdownLog\Table.cs" />
+    <Compile Include="MarkdownLog\TableCell.cs" />
+    <Compile Include="MarkdownLog\TableCellRenderSpecification.cs" />
+    <Compile Include="MarkdownLog\TableColumn.cs" />
+    <Compile Include="MarkdownLog\TableColumnAlignment.cs" />
+    <Compile Include="MarkdownLog\TableOptions.cs" />
+    <Compile Include="MarkdownLog\TableRow.cs" />
+    <Compile Include="MarkdownLog\TableView.cs" />
+    <Compile Include="MarkdownLog\TableViewCellAccessory.cs" />
+    <Compile Include="MarkdownLog\TableViewSection.cs" />
     <Compile Include="Windows\Pages\MainLogWindowPage.xaml.cs">
       <DependentUpon>MainLogWindowPage.xaml</DependentUpon>
     </Compile>
@@ -103,6 +159,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

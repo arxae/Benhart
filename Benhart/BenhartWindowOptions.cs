@@ -62,7 +62,7 @@ namespace BenhartLog
 		/// <summary>
 		/// Should the log automatically include a timestamp?
 		/// </summary>
-		public static bool ShowTime
+		public static bool ShowTimestamp
 		{
 			get { return Benhart.LogPage.ShowTime; }
 			set { Benhart.LogPage.ShowTime = value; }

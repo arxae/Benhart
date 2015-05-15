@@ -117,7 +117,7 @@ namespace BenhartLog
 		/// </summary>
 		/// <param name="text"></param>
 		/// <param name="style"></param>
-		public static void Log(string text, LogStyle style)
+		public static void Log(LogStyle style, string text)
 		{
 			LogPage.WriteStyledMessage(text, style);
 		}
@@ -127,9 +127,19 @@ namespace BenhartLog
 		/// </summary>
 		/// <param name="text"></param>
 		/// <param name="styleName"></param>
-		public static void Log(string text, string styleName)
+		public static void Log(string styleName, string text)
 		{
 			LogPage.WriteStyledMessage(text, GetLogStyle(styleName));
+		}
+
+		/// <summary>
+		/// Write to the log with a specified severity level
+		/// </summary>
+		/// <param name="text"></param>
+		/// <param name="severity"></param>
+		public static void Log(LogLevel severity, string text)
+		{
+			LogPage.WriteStyledMessage(text, LogStyle.GetLogStyle(severity));
 		}
 
 		// Quick log methods
