@@ -24,16 +24,27 @@ namespace BenhartLog
 		private static bool _isAttached;
 
 		// ===		WINDOW MANAGEMENT	===
+		/// <summary>
+		/// Show the window
+		/// </summary>
 		public static void Show()
 		{
 			Window.Show();
 		}
 
+		/// <summary>
+		/// Hide the window
+		/// </summary>
 		public static void Hide()
 		{
 			Window.Hide();
 		}
 
+		/// <summary>
+		/// Set the position of the window
+		/// </summary>
+		/// <param name="left"></param>
+		/// <param name="top"></param>
 		public static void SetPosition(int left, int top)
 		{
 			Window.Left = left;
@@ -44,7 +55,8 @@ namespace BenhartLog
 		/// Attaches to the specified window. Logwindow will attach itself to the right side of the parent window and follow it around
 		/// </summary>
 		/// <param name="win">Designate parent window</param>
-		public static void AttachTo(Window win)
+		/// <param name="showWindowOnAttach">Should the window be opened when it is attached?</param>
+		public static void AttachTo(Window win, bool showWindowOnAttach = true)
 		{
 			_parentWindow = win;
 			_parentWindow.LocationChanged += (s, e) => UpdatePosition();
@@ -64,7 +76,11 @@ namespace BenhartLog
 
 			_isAttached = true;
 			UpdatePosition();
-			Window.Show();
+
+			if (showWindowOnAttach)
+			{
+				Window.Show();
+			}
 		}
 
 		/// <summary>
@@ -96,11 +112,21 @@ namespace BenhartLog
 		}
 
 		// ===		LOG WRITING			===
+		/// <summary>
+		/// Write to the log with a custom style
+		/// </summary>
+		/// <param name="text"></param>
+		/// <param name="style"></param>
 		public static void Log(string text, LogStyle style)
 		{
 			LogPage.WriteStyledMessage(text, style);
 		}
 
+		/// <summary>
+		/// Write to the log with a style stored in the style dictionary
+		/// </summary>
+		/// <param name="text"></param>
+		/// <param name="styleName"></param>
 		public static void Log(string text, string styleName)
 		{
 			LogPage.WriteStyledMessage(text, GetLogStyle(styleName));
@@ -211,9 +237,12 @@ namespace BenhartLog
 
 
 
-		// // // // // //
-		// TEST AREA   //
-		// // // // // //
+		// ===		PAGE MANAGEMENT	===
+		/// <summary>
+		/// Add a page with the specified pagename and WPF Page object.
+		/// </summary>
+		/// <param name="pageName">The name to recall the page later and also the name of the tab</param>
+		/// <param name="pageItem"></param>
 		public static void AddPage(string pageName, Page pageItem)
 		{
 			if (CustomPages.ContainsKey(pageName)) return;
@@ -222,6 +251,13 @@ namespace BenhartLog
 			Window.AddPage(pageName);
 		}
 
+		/// <summary>
+		/// Gets the custom added page
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="pageName"></param>
+		/// <param name="throwExceptionOnFail"></param>
+		/// <returns></returns>
 		public static T GetPage<T>(string pageName, bool throwExceptionOnFail = false) where T : Page
 		{
 			if (CustomPages.ContainsKey(pageName))
