@@ -282,5 +282,27 @@ namespace BenhartLog
 
 			return null;
 		}
+
+		// ===		COMMAND MANAGEMENT	===
+		/// <summary>
+		/// Registers a command witouth parameters
+		/// </summary>
+		/// <param name="command">The command that has to be inputted into the console for it to be called</param>
+		/// <param name="commandAction">An action that gets executed when the command is ran</param>
+		public static void RegisterCommand(string command, Action commandAction)
+		{
+			CommandManager.RegisterCommand(command, commandAction);
+		}
+
+		/// <summary>
+		/// Registers a command with parameters
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="command">The command that has to be inputted into the console for it to be called</param>
+		/// <param name="commandAction">An action that gets executed when the command is ran</param>
+		public static void RegisterCommandWithParameters<T>(string command, Action<T> commandAction)
+		{
+			CommandManager.RegisterCommandWithParameters(command, commandAction);
+		}
 	}
 }

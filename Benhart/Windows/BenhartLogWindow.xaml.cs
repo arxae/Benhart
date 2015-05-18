@@ -10,6 +10,14 @@ namespace BenhartLog.Windows
 		{
 			InitializeComponent();
 
+			// Register commands
+			Benhart.RegisterCommandWithParameters<string>("debug", Benhart.Debug);
+			Benhart.RegisterCommandWithParameters<string>("error", Benhart.Error);
+			Benhart.RegisterCommandWithParameters<string>("info", Benhart.Info);
+			Benhart.RegisterCommandWithParameters<string>("message", Benhart.Message);
+			Benhart.RegisterCommandWithParameters<string>("warning", Benhart.Warning);
+			Benhart.RegisterCommand("hide", Benhart.Hide);
+
 			// TODO: Temporary fix because the XAML event threw errors
 			Closing += Window_Closing;
 

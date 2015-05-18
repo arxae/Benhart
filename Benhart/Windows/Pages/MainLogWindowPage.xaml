@@ -47,8 +47,8 @@
 				<ColumnDefinition Width="100" />
 			</Grid.ColumnDefinitions>
 
-			<TextBox Grid.Column="0" Name="ConsoleInput" />
-			<Button Grid.Column="1" Name="ConsoleInputButton" Content="Input" />
+			<TextBox Grid.Column="0" Name="ConsoleInput" KeyDown="ConsoleInput_KeyDown"/>
+			<Button Grid.Column="1" Name="ConsoleInputButton" Content="Input" Click="ConsoleInputButton_Click" />
 		</Grid>
 	</Grid>
 </Page>

@@ -114,6 +114,7 @@
     <Compile Include="MarkdownLog\TableView.cs" />
     <Compile Include="MarkdownLog\TableViewCellAccessory.cs" />
     <Compile Include="MarkdownLog\TableViewSection.cs" />
+    <Compile Include="Windows\Pages\CommandManager.cs" />
     <Compile Include="Windows\Pages\MainLogWindowPage.xaml.cs">
       <DependentUpon>MainLogWindowPage.xaml</DependentUpon>
     </Compile>

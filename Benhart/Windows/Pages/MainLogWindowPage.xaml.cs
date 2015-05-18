@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
+using System.Windows.Input;
 
 namespace BenhartLog.Windows.Pages
 {
@@ -70,6 +71,34 @@ namespace BenhartLog.Windows.Pages
 				WatchGrid.ItemsSource = null;
 				WatchGrid.ItemsSource = _watches;
 			}
+		}
+
+		private void ConsoleInput_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.Key == Key.Return)
+			{
+				ParseCommand();
+			}
+		}
+
+		private void ConsoleInputButton_Click(object sender, RoutedEventArgs e)
+		{
+			ParseCommand();
+			ConsoleInput.Clear();
+		}
+
+		private void ParseCommand()
+		{
+			var parts = ConsoleInput.Text.Split(' ').ToList();
+			var command = parts[0];
+			parts.Remove(command);
+
+			if (CommandManager.RunCommand(command, string.Join(" ", parts)) == -1)
+			{
+				Benhart.Error($"The command \"{command}\" is not registered.");
+			}
+
+			ConsoleInput.Clear();
 		}
 	}
 }
