@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BenhartLog.Windows.Pages
+namespace BenhartLog
 {
 	internal class CommandManager
 	{
