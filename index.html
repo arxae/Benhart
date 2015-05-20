@@ -8,12 +8,261 @@
         <title>Benhart</title>
         <meta name="viewport" content="width=device-width">
 
-					<link rel="stylesheet" type="text/css" href="assets/css/style.css?version=0.9.4.1" />
-			<script src="assets/js/vendor.js?version=0.9.4.1"></script>
-			<script src="assets/js/app.js?version=0.9.4.1"></script>
+		
+					<link rel="stylesheet" type="text/css" href="assets/css/font.css?version=0.9.6.8" />
+			<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css?version=0.9.6.8" />
+			<link rel="stylesheet" type="text/css" href="assets/css/style.css?version=0.9.6.8" />
+			<link rel="stylesheet" type="text/css" href="assets/css/dynamic.css?version=0.9.6.8" />
+			
+			<!--[if IE 8]>
+				<script src="assets/js/vendor.ie8.js?version=0.9.6.8"></script>
+			<![endif]-->
+			<![if !IE 8]>
+				<script src="assets/js/vendor.js?version=0.9.6.8"></script>
+			<![endif]>
+
+			<script src="assets/js/jquery.layout.min.js?version=0.9.6.8"></script>	
+			<script src="assets/js/app.js?version=0.9.6.8"></script>
 		
 		<script>
 			var homeString = "Home";
+			var searchIndex = [ 
+	
+			
+
+
+
+
+
+
+
+
+
+
+
+	{ "Name" : "BenhartLog", "Url" : "#namespace/BenhartLog", "Type" : "Namespace" },
+	
+		{ "Name" : "Benhart", "Url" : "#type/Benhart", "Type" : "Type" },
+
+		
+			{ "Name" : "_dicCustomPagesInstance", "Url" : "#type/Benhart?_dicCustomPagesInstance", "Type" : "Field" },
+		
+			{ "Name" : "_dicStylesInstance", "Url" : "#type/Benhart?_dicStylesInstance", "Type" : "Field" },
+		
+			{ "Name" : "_isAttached", "Url" : "#type/Benhart?_isAttached", "Type" : "Field" },
+		
+			{ "Name" : "_logWindowInstance", "Url" : "#type/Benhart?_logWindowInstance", "Type" : "Field" },
+		
+			{ "Name" : "_parentWindow", "Url" : "#type/Benhart?_parentWindow", "Type" : "Field" },
+		
+			{ "Name" : "LogPage", "Url" : "#type/Benhart?LogPage", "Type" : "Property" },
+		
+			{ "Name" : "AddLogStyle", "Url" : "#type/Benhart?AddLogStyle", "Type" : "Method" },
+		
+			{ "Name" : "AddPage", "Url" : "#type/Benhart?AddPage", "Type" : "Method" },
+		
+			{ "Name" : "Attach", "Url" : "#type/Benhart?Attach", "Type" : "Method" },
+		
+			{ "Name" : "AttachTo", "Url" : "#type/Benhart?AttachTo", "Type" : "Method" },
+		
+			{ "Name" : "Debug", "Url" : "#type/Benhart?Debug", "Type" : "Method" },
+		
+			{ "Name" : "Detach", "Url" : "#type/Benhart?Detach", "Type" : "Method" },
+		
+			{ "Name" : "Error", "Url" : "#type/Benhart?Error", "Type" : "Method" },
+		
+			{ "Name" : "GetAllCommands", "Url" : "#type/Benhart?GetAllCommands", "Type" : "Method" },
+		
+			{ "Name" : "GetLogStyle", "Url" : "#type/Benhart?GetLogStyle", "Type" : "Method" },
+		
+			{ "Name" : "GetPage", "Url" : "#type/Benhart?GetPage", "Type" : "Method" },
+		
+			{ "Name" : "Hide", "Url" : "#type/Benhart?Hide", "Type" : "Method" },
+		
+			{ "Name" : "Info", "Url" : "#type/Benhart?Info", "Type" : "Method" },
+		
+			{ "Name" : "Log", "Url" : "#type/Benhart?Log3", "Type" : "Method" },
+		
+			{ "Name" : "Log", "Url" : "#type/Benhart?Log", "Type" : "Method" },
+		
+			{ "Name" : "Log", "Url" : "#type/Benhart?Log2", "Type" : "Method" },
+		
+			{ "Name" : "Message", "Url" : "#type/Benhart?Message", "Type" : "Method" },
+		
+			{ "Name" : "RegisterCommand", "Url" : "#type/Benhart?RegisterCommand", "Type" : "Method" },
+		
+			{ "Name" : "RegisterCommandWithParameters", "Url" : "#type/Benhart?RegisterCommandWithParameters", "Type" : "Method" },
+		
+			{ "Name" : "SetPosition", "Url" : "#type/Benhart?SetPosition", "Type" : "Method" },
+		
+			{ "Name" : "SetWatch", "Url" : "#type/Benhart?SetWatch", "Type" : "Method" },
+		
+			{ "Name" : "Show", "Url" : "#type/Benhart?Show", "Type" : "Method" },
+		
+			{ "Name" : "UpdatePosition", "Url" : "#type/Benhart?UpdatePosition", "Type" : "Method" },
+		
+			{ "Name" : "Warning", "Url" : "#type/Benhart?Warning", "Type" : "Method" },
+		
+		{ "Name" : "BenhartMD", "Url" : "#type/BenhartMD", "Type" : "Type" },
+
+		
+			{ "Name" : "BulletList", "Url" : "#type/BenhartMD?BulletList", "Type" : "Method" },
+		
+			{ "Name" : "NumberedList", "Url" : "#type/BenhartMD?NumberedList", "Type" : "Method" },
+		
+			{ "Name" : "Paragraph", "Url" : "#type/BenhartMD?Paragraph", "Type" : "Method" },
+		
+			{ "Name" : "Table", "Url" : "#type/BenhartMD?Table", "Type" : "Method" },
+		
+		{ "Name" : "BenhartWindowOptions", "Url" : "#type/BenhartWindowOptions", "Type" : "Type" },
+
+		
+			{ "Name" : "Height", "Url" : "#type/BenhartWindowOptions?Height", "Type" : "Property" },
+		
+			{ "Name" : "Left", "Url" : "#type/BenhartWindowOptions?Left", "Type" : "Property" },
+		
+			{ "Name" : "LogWindowHeader", "Url" : "#type/BenhartWindowOptions?LogWindowHeader", "Type" : "Property" },
+		
+			{ "Name" : "ShowInTaskbar", "Url" : "#type/BenhartWindowOptions?ShowInTaskbar", "Type" : "Property" },
+		
+			{ "Name" : "ShowTimestamp", "Url" : "#type/BenhartWindowOptions?ShowTimestamp", "Type" : "Property" },
+		
+			{ "Name" : "TimeFormat", "Url" : "#type/BenhartWindowOptions?TimeFormat", "Type" : "Property" },
+		
+			{ "Name" : "TimeMessageSepparator", "Url" : "#type/BenhartWindowOptions?TimeMessageSepparator", "Type" : "Property" },
+		
+			{ "Name" : "Top", "Url" : "#type/BenhartWindowOptions?Top", "Type" : "Property" },
+		
+			{ "Name" : "Visbility", "Url" : "#type/BenhartWindowOptions?Visbility", "Type" : "Property" },
+		
+			{ "Name" : "Width", "Url" : "#type/BenhartWindowOptions?Width", "Type" : "Property" },
+		
+		{ "Name" : "CommandManager", "Url" : "#type/CommandManager", "Type" : "Type" },
+
+		
+			{ "Name" : "_cmdsInstance", "Url" : "#type/CommandManager?_cmdsInstance", "Type" : "Field" },
+		
+			{ "Name" : "_cmdsParamteredInstance", "Url" : "#type/CommandManager?_cmdsParamteredInstance", "Type" : "Field" },
+		
+			{ "Name" : "RegisterCommand", "Url" : "#type/CommandManager?RegisterCommand2", "Type" : "Method" },
+		
+			{ "Name" : "RegisterCommandWithParameters", "Url" : "#type/CommandManager?RegisterCommandWithParameters2", "Type" : "Method" },
+		
+			{ "Name" : "ReportCommands", "Url" : "#type/CommandManager?ReportCommands", "Type" : "Method" },
+		
+			{ "Name" : "RunCommand", "Url" : "#type/CommandManager?RunCommand", "Type" : "Method" },
+		
+		{ "Name" : "LineStyle", "Url" : "#type/LineStyle", "Type" : "Type" },
+
+		
+			{ "Name" : "None", "Url" : "#type/LineStyle?None", "Type" : "Field" },
+		
+			{ "Name" : "Overline", "Url" : "#type/LineStyle?Overline", "Type" : "Field" },
+		
+			{ "Name" : "Striketrough", "Url" : "#type/LineStyle?Striketrough", "Type" : "Field" },
+		
+			{ "Name" : "Underline", "Url" : "#type/LineStyle?Underline", "Type" : "Field" },
+		
+		{ "Name" : "LogLevel", "Url" : "#type/LogLevel", "Type" : "Type" },
+
+		
+			{ "Name" : "Debug", "Url" : "#type/LogLevel?Debug", "Type" : "Field" },
+		
+			{ "Name" : "Error", "Url" : "#type/LogLevel?Error", "Type" : "Field" },
+		
+			{ "Name" : "Info", "Url" : "#type/LogLevel?Info", "Type" : "Field" },
+		
+			{ "Name" : "Message", "Url" : "#type/LogLevel?Message", "Type" : "Field" },
+		
+			{ "Name" : "Warning", "Url" : "#type/LogLevel?Warning", "Type" : "Field" },
+		
+		{ "Name" : "LogStyle", "Url" : "#type/LogStyle", "Type" : "Type" },
+
+		
+			{ "Name" : "BackgroundColor", "Url" : "#type/LogStyle?BackgroundColor", "Type" : "Field" },
+		
+			{ "Name" : "ForegroundColor", "Url" : "#type/LogStyle?ForegroundColor", "Type" : "Field" },
+		
+			{ "Name" : "IsBold", "Url" : "#type/LogStyle?IsBold", "Type" : "Field" },
+		
+			{ "Name" : "IsItalic", "Url" : "#type/LogStyle?IsItalic", "Type" : "Field" },
+		
+			{ "Name" : "LineStyle", "Url" : "#type/LogStyle?LineStyle", "Type" : "Field" },
+		
+			{ "Name" : "GetDefaultStyle", "Url" : "#type/LogStyle?GetDefaultStyle", "Type" : "Method" },
+		
+			{ "Name" : "GetLogStyle", "Url" : "#type/LogStyle?GetLogStyle2", "Type" : "Method" },
+		
+		{ "Name" : "Util", "Url" : "#type/Util", "Type" : "Type" },
+
+		
+			{ "Name" : "AddDefaultStyles", "Url" : "#type/Util?AddDefaultStyles", "Type" : "Method" },
+		
+		{ "Name" : "WatchEntry", "Url" : "#type/WatchEntry", "Type" : "Type" },
+
+		
+			{ "Name" : "WatchName", "Url" : "#type/WatchEntry?WatchName", "Type" : "Property" },
+		
+			{ "Name" : "WatchValue", "Url" : "#type/WatchEntry?WatchValue", "Type" : "Property" },
+		
+	{ "Name" : "BenhartLog.Properties", "Url" : "#namespace/BenhartLog.Properties", "Type" : "Namespace" },
+	
+		{ "Name" : "Resources", "Url" : "#type/Resources", "Type" : "Type" },
+
+		
+			{ "Name" : "resourceCulture", "Url" : "#type/Resources?resourceCulture", "Type" : "Field" },
+		
+			{ "Name" : "resourceMan", "Url" : "#type/Resources?resourceMan", "Type" : "Field" },
+		
+			{ "Name" : "Culture", "Url" : "#type/Resources?Culture", "Type" : "Property" },
+		
+			{ "Name" : "ResourceManager", "Url" : "#type/Resources?ResourceManager", "Type" : "Property" },
+		
+		{ "Name" : "Settings", "Url" : "#type/Settings", "Type" : "Type" },
+
+		
+			{ "Name" : "defaultInstance", "Url" : "#type/Settings?defaultInstance", "Type" : "Field" },
+		
+			{ "Name" : "Default", "Url" : "#type/Settings?Default", "Type" : "Property" },
+		
+	{ "Name" : "BenhartLog.Windows", "Url" : "#namespace/BenhartLog.Windows", "Type" : "Namespace" },
+	
+		{ "Name" : "BenhartLogWindow", "Url" : "#type/BenhartLogWindow", "Type" : "Type" },
+
+		
+			{ "Name" : "AllowExit", "Url" : "#type/BenhartLogWindow?AllowExit", "Type" : "Field" },
+		
+			{ "Name" : "AddPage", "Url" : "#type/BenhartLogWindow?AddPage2", "Type" : "Method" },
+		
+			{ "Name" : "Window_Closing", "Url" : "#type/BenhartLogWindow?Window_Closing", "Type" : "Method" },
+		
+	{ "Name" : "BenhartLog.Windows.Pages", "Url" : "#namespace/BenhartLog.Windows.Pages", "Type" : "Namespace" },
+	
+		{ "Name" : "MainLogWindowPage", "Url" : "#type/MainLogWindowPage", "Type" : "Type" },
+
+		
+			{ "Name" : "_watches", "Url" : "#type/MainLogWindowPage?_watches", "Type" : "Field" },
+		
+			{ "Name" : "ShowTime", "Url" : "#type/MainLogWindowPage?ShowTime", "Type" : "Field" },
+		
+			{ "Name" : "TimeFormat", "Url" : "#type/MainLogWindowPage?TimeFormat", "Type" : "Field" },
+		
+			{ "Name" : "TimeMessageSepparator", "Url" : "#type/MainLogWindowPage?TimeMessageSepparator", "Type" : "Field" },
+		
+			{ "Name" : "ConsoleInput_KeyDown", "Url" : "#type/MainLogWindowPage?ConsoleInput_KeyDown", "Type" : "Method" },
+		
+			{ "Name" : "ConsoleInputButton_Click", "Url" : "#type/MainLogWindowPage?ConsoleInputButton_Click", "Type" : "Method" },
+		
+			{ "Name" : "GetLogText", "Url" : "#type/MainLogWindowPage?GetLogText", "Type" : "Method" },
+		
+			{ "Name" : "ParseCommand", "Url" : "#type/MainLogWindowPage?ParseCommand", "Type" : "Method" },
+		
+			{ "Name" : "SetWatch", "Url" : "#type/MainLogWindowPage?SetWatch2", "Type" : "Method" },
+		
+			{ "Name" : "WriteStyledMessage", "Url" : "#type/MainLogWindowPage?WriteStyledMessage", "Type" : "Method" },
+		
+
+		];
 		</script>
 
     </head>
@@ -28,12 +277,18 @@
 			</div>
 			<div class="sd-footer">
 				
-				 <a href="https://github.com/arxae/Benhart" target="_blank">Benhart</a> 1.1.0 by <a href="https://github.com/arxae" target="_blank">Arxae</a> - Generated By <a href="http://sharpDox.de" target="_blank">sharpDox</a>
+				 <a href="https://github.com/arxae/benhart" target="_blank">Benhart</a>  by <a href="https://github.com/arxae" target="_blank">Arxae</a> - generated by <a href="http://sharpDox.de" target="_blank">sharpDox</a>
 			</div>
 		</div>
-        <div id="navigation" class="ui-layout-west">
-			<ul>
-	<li data-jstree='{"icon":"icon-home"}' id="home" class="jstree-open"><a href="#home">Home</a>
+        <div class="ui-layout-west">
+			<div id="search">
+				<i class="icon-search"></i> <input id="searchInput" type="text" />
+				<div id="searchResults">
+				</div>
+			</div>
+			<div id="navigation">
+				<ul>
+	<li data-jstree='{"icon":"icon-home"}' id="node-home" class="jstree-open"><a href="#home">Home</a>
 	<ul>
 						
 
@@ -46,7 +301,11 @@
 	
 		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/Benhart"><a href="#type/Benhart">Benhart</a></li>
 	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/BenhartMarkdown"><a href="#type/BenhartMarkdown">BenhartMarkdown</a></li>
+		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/BenhartMD"><a href="#type/BenhartMD">BenhartMD</a></li>
+	
+		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/BenhartWindowOptions"><a href="#type/BenhartWindowOptions">BenhartWindowOptions</a></li>
+	
+		<li data-jstree='{"icon":"./assets/images/icons/class_internal.png"}' id="node-type/CommandManager"><a href="#type/CommandManager">CommandManager</a></li>
 	
 		<li data-jstree='{"icon":"./assets/images/icons/enum_public.png"}' id="node-type/LineStyle"><a href="#type/LineStyle">LineStyle</a></li>
 	
@@ -54,97 +313,9 @@
 	
 		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/LogStyle"><a href="#type/LogStyle">LogStyle</a></li>
 	
+		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/Util"><a href="#type/Util">Util</a></li>
+	
 		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/WatchEntry"><a href="#type/WatchEntry">WatchEntry</a></li>
-
-</ul>
-
-</li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/namespace_public.png"}' id="node-namespace/BenhartLog.MarkdownLog"><a href="#namespace/BenhartLog.MarkdownLog">BenhartLog.MarkdownLog</a> 
- 
-
-<ul>
-
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/BarChart"><a href="#type/BarChart">BarChart</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/BarChartDataPoint"><a href="#type/BarChartDataPoint">BarChartDataPoint</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/Blockquote"><a href="#type/Blockquote">Blockquote</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/BulletedList"><a href="#type/BulletedList">BulletedList</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/CodeBlock"><a href="#type/CodeBlock">CodeBlock</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_internal.png"}' id="node-type/EmptyTableCell"><a href="#type/EmptyTableCell">EmptyTableCell</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/Header"><a href="#type/Header">Header</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/HeaderBase"><a href="#type/HeaderBase">HeaderBase</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/HorizontalRule"><a href="#type/HorizontalRule">HorizontalRule</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/interface_public.png"}' id="node-type/IIosTableViewCell"><a href="#type/IIosTableViewCell">IIosTableViewCell</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/interface_public.png"}' id="node-type/IIosTableViewHeaderCell"><a href="#type/IIosTableViewHeaderCell">IIosTableViewHeaderCell</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/interface_public.png"}' id="node-type/IMarkdownElement"><a href="#type/IMarkdownElement">IMarkdownElement</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/IosTableViewCell"><a href="#type/IosTableViewCell">IosTableViewCell</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/IosTableViewCheckmarkCell"><a href="#type/IosTableViewCheckmarkCell">IosTableViewCheckmarkCell</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/IosTableViewHeaderCell"><a href="#type/IosTableViewHeaderCell">IosTableViewHeaderCell</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/interface_public.png"}' id="node-type/ITableCell"><a href="#type/ITableCell">ITableCell</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/ListBase"><a href="#type/ListBase">ListBase</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_internal.png"}' id="node-type/ListItem"><a href="#type/ListItem">ListItem</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/MarkDownBuilderExtensions"><a href="#type/MarkDownBuilderExtensions">MarkDownBuilderExtensions</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/MarkdownContainer"><a href="#type/MarkdownContainer">MarkdownContainer</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/MarkdownElement"><a href="#type/MarkdownElement">MarkdownElement</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/MarkdownOptions"><a href="#type/MarkdownOptions">MarkdownOptions</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/MarkdownToHtmlConverter"><a href="#type/MarkdownToHtmlConverter">MarkdownToHtmlConverter</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/MarkdownToHtmlExtensions"><a href="#type/MarkdownToHtmlExtensions">MarkdownToHtmlExtensions</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/NumberedList"><a href="#type/NumberedList">NumberedList</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/NumberExtensions"><a href="#type/NumberExtensions">NumberExtensions</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/Paragraph"><a href="#type/Paragraph">Paragraph</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/RawMarkdown"><a href="#type/RawMarkdown">RawMarkdown</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/ReflectionExtensions"><a href="#type/ReflectionExtensions">ReflectionExtensions</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/StringExtensions"><a href="#type/StringExtensions">StringExtensions</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/SubHeader"><a href="#type/SubHeader">SubHeader</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/Table"><a href="#type/Table">Table</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/TableCell"><a href="#type/TableCell">TableCell</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/TableCellRenderSpecification"><a href="#type/TableCellRenderSpecification">TableCellRenderSpecification</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/TableColumn"><a href="#type/TableColumn">TableColumn</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/enum_public.png"}' id="node-type/TableColumnAlignment"><a href="#type/TableColumnAlignment">TableColumnAlignment</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/TableRow"><a href="#type/TableRow">TableRow</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/TableView"><a href="#type/TableView">TableView</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/enum_public.png"}' id="node-type/TableViewCellAccessory"><a href="#type/TableViewCellAccessory">TableViewCellAccessory</a></li>
-	
-		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/TableViewSection"><a href="#type/TableViewSection">TableViewSection</a></li>
 
 </ul>
 
@@ -175,11 +346,24 @@
 </ul>
 
 </li>
+	
+		<li data-jstree='{"icon":"./assets/images/icons/namespace_public.png"}' id="node-namespace/BenhartLog.Windows.Pages"><a href="#namespace/BenhartLog.Windows.Pages">BenhartLog.Windows.Pages</a> 
+ 
+
+<ul>
+
+	
+		<li data-jstree='{"icon":"./assets/images/icons/class_public.png"}' id="node-type/MainLogWindowPage"><a href="#type/MainLogWindowPage">MainLogWindowPage</a></li>
+
+</ul>
+
+</li>
 
 
 			</ul>
 	</li>	
 </ul>
+			</div>
 		</div>
 		<div id="loader"><i class="icon-refresh icon-spin"></i></div>
 		<iframe id="content" class="ui-layout-center" frameborder="0" width="100%" src="article/home.html"></iframe>

@@ -8,9 +8,20 @@
         <title>Benhart - BenhartLog</title>
         <meta name="viewport" content="width=device-width">
 
-					<link rel="stylesheet" type="text/css" href="../assets/css/style.css?version=0.9.4.1" />
-			<script src="../assets/js/vendor.js?version=0.9.4.1"></script>
-			<script src="../assets/js/frame.js?version=0.9.4.1"></script>
+					<link rel="stylesheet" type="text/css" href="../assets/css/font.css?version=0.9.6.8" />
+			<link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css?version=0.9.6.8" />
+			<link rel="stylesheet" type="text/css" href="../assets/css/style.css?version=0.9.6.8" />
+			
+			<!--[if IE 8]>
+				<script src="../assets/js/vendor.ie8.js?version=0.9.6.8"></script>
+			<![endif]-->
+			<![if !IE 8]>
+				<script src="../assets/js/vendor.js?version=0.9.6.8"></script>
+			<![endif]>
+
+			<script src="../assets/js/jquery.layout.min.js"></script>	
+			<script src="../assets/js/frame.js?version=0.9.6.8"></script>
+			<script src="../assets/js/iframe.js"></script>
 		
 		<script>hljs.initHighlightingOnLoad();</script>
 
@@ -21,13 +32,19 @@
 			<ul class="dropdown-menu">
 									<li><a href="../type/Benhart.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> Benhart</a></li>
 
-									<li><a href="../type/BenhartMarkdown.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> BenhartMarkdown</a></li>
+									<li><a href="../type/BenhartMD.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> BenhartMD</a></li>
+
+									<li><a href="../type/BenhartWindowOptions.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> BenhartWindowOptions</a></li>
+
+									<li><a href="../type/CommandManager.html"><img alt="Class-Icon" src="../assets/images/icons/class_internal.png"> CommandManager</a></li>
 
 									<li><a href="../type/LineStyle.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> LineStyle</a></li>
 
 									<li><a href="../type/LogLevel.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> LogLevel</a></li>
 
 									<li><a href="../type/LogStyle.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> LogStyle</a></li>
+
+									<li><a href="../type/Util.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> Util</a></li>
 
 									<li><a href="../type/WatchEntry.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> WatchEntry</a></li>
 
@@ -36,124 +53,163 @@
 	   
 	    <div class="ui-layout-north">
 			<div class="toolbar">
-				<a href="#" data-dropdown="#dropdown-1" class="button"><img src="../assets/images/icons/class_public.png"/> Types <span class="info">(6)</span> <i class="icon-caret-down"></i></a>
+				<a href="#" data-dropdown="#dropdown-1" class="button"><img src="../assets/images/icons/class_public.png"/> Types <span class="info">(9)</span> <i class="icon-caret-down"></i></a>
 				<div class="right">
 					<span class="toolbar-info"> Assembly: Benhart</span>
-					<a href="#" id="print-button" class="button" title="Print"><i class="icon-print"></i></a>
+					<a href="#" id="print-button" class="button" title="print"><i class="icon-print"></i></a>
 				</div>
 				<div style="clear:both;"></div>
 			</div>
 		</div>
         
 		<div class="ui-layout-center">
-			
-				<h3 class="box-title first-heading">Types</h3>
+			<div>
+				
+					<h3 class="box-title first-heading">Types</h3>
 
-			
-			<div class="table-box">
-				<table>
-					<thead>
-						<tr>
-							<td></td>
-							<td>Name</td>
-							<td>Description</td>
-						</tr>
-					</thead>
-					<tbody>			
-
-						
-							<tr >
-								<td class="iconColumn">
-									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
-								</td>
-								<td>
-									<a title="Benhart" href="../type/Benhart.html">Benhart</a>
-								</td>	
-								<td class="markdown">
-																	</td>
+				
+				<div class="table-box">
+					<table>
+						<thead>
+							<tr>
+								<td></td>
+								<td>Name</td>
+								<td>Description</td>
 							</tr>
+						</thead>
+						<tbody>			
 
-						
-							<tr  class="even" >
-								<td class="iconColumn">
-									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
-								</td>
-								<td>
-									<a title="BenhartMarkdown" href="../type/BenhartMarkdown.html">BenhartMarkdown</a>
-								</td>	
-								<td class="markdown">
-																			<p>Outputs Markdown instead of regular text
+							
+								<tr >
+									<td class="iconColumn">
+										<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+									</td>
+									<td>
+										<a title="Benhart" href="../type/Benhart.html">Benhart</a>
+									</td>	
+									<td class="markdown">
+																			</td>
+								</tr>
+
+							
+								<tr  class="even" >
+									<td class="iconColumn">
+										<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+									</td>
+									<td>
+										<a title="BenhartMD" href="../type/BenhartMD.html">BenhartMD</a>
+									</td>	
+									<td class="markdown">
+																						<p>Outputs Markdown instead of regular text
 Uses MarkdownLog by Wheelies: https://github.com/Wheelies/MarkdownLog</p>
 
-																	</td>
-							</tr>
+																			</td>
+								</tr>
 
-						
-							<tr >
-								<td class="iconColumn">
-									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
-								</td>
-								<td>
-									<a title="LineStyle" href="../type/LineStyle.html">LineStyle</a>
-								</td>	
-								<td class="markdown">
-																			<p>Available line styles</p>
+							
+								<tr >
+									<td class="iconColumn">
+										<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+									</td>
+									<td>
+										<a title="BenhartWindowOptions" href="../type/BenhartWindowOptions.html">BenhartWindowOptions</a>
+									</td>	
+									<td class="markdown">
+																			</td>
+								</tr>
 
-																	</td>
-							</tr>
+							
+								<tr  class="even" >
+									<td class="iconColumn">
+										<img alt="Class-Icon" src="../assets/images/icons/class_internal.png">
+									</td>
+									<td>
+										<a title="CommandManager" href="../type/CommandManager.html">CommandManager</a>
+									</td>	
+									<td class="markdown">
+																			</td>
+								</tr>
 
-						
-							<tr  class="even" >
-								<td class="iconColumn">
-									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
-								</td>
-								<td>
-									<a title="LogLevel" href="../type/LogLevel.html">LogLevel</a>
-								</td>	
-								<td class="markdown">
-																			<p>Severity levels</p>
+							
+								<tr >
+									<td class="iconColumn">
+										<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+									</td>
+									<td>
+										<a title="LineStyle" href="../type/LineStyle.html">LineStyle</a>
+									</td>	
+									<td class="markdown">
+																			</td>
+								</tr>
 
-																	</td>
-							</tr>
+							
+								<tr  class="even" >
+									<td class="iconColumn">
+										<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+									</td>
+									<td>
+										<a title="LogLevel" href="../type/LogLevel.html">LogLevel</a>
+									</td>	
+									<td class="markdown">
+																			</td>
+								</tr>
 
-						
-							<tr >
-								<td class="iconColumn">
-									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
-								</td>
-								<td>
-									<a title="LogStyle" href="../type/LogStyle.html">LogStyle</a>
-								</td>	
-								<td class="markdown">
-																	</td>
-							</tr>
+							
+								<tr >
+									<td class="iconColumn">
+										<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+									</td>
+									<td>
+										<a title="LogStyle" href="../type/LogStyle.html">LogStyle</a>
+									</td>	
+									<td class="markdown">
+																			</td>
+								</tr>
 
-						
-							<tr  class="even" >
-								<td class="iconColumn">
-									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
-								</td>
-								<td>
-									<a title="WatchEntry" href="../type/WatchEntry.html">WatchEntry</a>
-								</td>	
-								<td class="markdown">
-																	</td>
-							</tr>
+							
+								<tr  class="even" >
+									<td class="iconColumn">
+										<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+									</td>
+									<td>
+										<a title="Util" href="../type/Util.html">Util</a>
+									</td>	
+									<td class="markdown">
+																			</td>
+								</tr>
 
-						
-					</tbody>
-				</table>
-			</div>
+							
+								<tr >
+									<td class="iconColumn">
+										<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+									</td>
+									<td>
+										<a title="WatchEntry" href="../type/WatchEntry.html">WatchEntry</a>
+									</td>	
+									<td class="markdown">
+																			</td>
+								</tr>
 
-							<h3 class="box-title">Uses</h3>
-				<div class="list-box">
-					<ul>
-											<li><a href="../namespace/BenhartLog.MarkdownLog.html">BenhartLog.MarkdownLog</a></li>
-											<li><a href="../namespace/BenhartLog.Windows.html">BenhartLog.Windows</a></li>
-										</ul>
+							
+						</tbody>
+					</table>
 				</div>
-			
+
+									<h3 class="box-title">Uses</h3>
+					<div class="list-box">
+						<ul>
+													<li><a href="../namespace/BenhartLog.Windows.Pages.html">BenhartLog.Windows.Pages</a></li>
+												</ul>
 					</div>
+				
+									<h3 class="box-title">Used by</h3>
+					<div class="list-box">
+						<ul>
+													<li><a href="../namespace/BenhartLog.Windows.Pages.html">BenhartLog.Windows.Pages</a></li>
+												</ul>
+					</div>
+							</div>
+		</div>
 	   
     </body>
 </html>
