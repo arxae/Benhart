@@ -16,6 +16,9 @@
 			<TabItem Header="Console Commands">
 				<Frame Source="Pages/3Commands.xaml" />
 			</TabItem>
+			<TabItem Header="Markdown Output">
+				<Frame Source="Pages/4MarkdownOutputPage.xaml" />
+			</TabItem>
 		</TabControl>
 	</Grid>
 </Window>

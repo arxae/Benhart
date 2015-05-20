@@ -79,6 +79,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\4MarkdownOutputPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\1SimpleMessagesPage.xaml.cs">
@@ -89,6 +93,9 @@
     </Compile>
     <Compile Include="Pages\3Commands.xaml.cs">
       <DependentUpon>3Commands.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\4MarkdownOutputPage.xaml.cs">
+      <DependentUpon>4MarkdownOutputPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
