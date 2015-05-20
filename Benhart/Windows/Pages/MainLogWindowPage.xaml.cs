@@ -13,7 +13,7 @@ namespace BenhartLog.Windows.Pages
 		public string TimeFormat = "HH:mm:ss";
 		public string TimeMessageSepparator = " | ";
 
-		private readonly ObservableCollection<WatchEntry> _watches;
+		internal readonly ObservableCollection<WatchEntry> _watches;
 
 		public MainLogWindowPage()
 		{
@@ -99,6 +99,11 @@ namespace BenhartLog.Windows.Pages
 			}
 
 			ConsoleInput.Clear();
+		}
+
+		internal string GetLogText()
+		{
+			return new TextRange(LogTextBox.Document.ContentStart, LogTextBox.Document.ContentEnd).Text;
 		}
 	}
 }
