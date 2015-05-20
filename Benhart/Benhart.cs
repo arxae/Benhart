@@ -304,5 +304,14 @@ namespace BenhartLog
 		{
 			CommandManager.RegisterCommandWithParameters(command, commandAction);
 		}
+
+		/// <summary>
+		/// Returns an array of all the usable commands
+		/// </summary>
+		/// <returns></returns>
+		public static string[] GetAllCommands()
+		{
+			return CommandManager.ReportCommands();
+		}
 	}
 }

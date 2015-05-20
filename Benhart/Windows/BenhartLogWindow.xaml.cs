@@ -24,6 +24,8 @@ namespace BenhartLog.Windows
 			{
 				Benhart.Info($"Bernhart Logging Window v{assembly.Version}");
 			});
+			Benhart.RegisterCommand("cmdlist",
+				() => Benhart.Info($"The following commands are available: {string.Join(", ", Benhart.GetAllCommands())}"));
 
 			// TODO: Temporary fix because the XAML event threw errors
 			Closing += Window_Closing;

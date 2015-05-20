@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BenhartLog
 {
@@ -58,6 +59,16 @@ namespace BenhartLog
 			{
 				return -1;
 			}
+		}
+
+		internal static string[] ReportCommands()
+		{
+			var list = new List<string>();
+
+			list.AddRange(Commands.Keys.ToList());
+			list.AddRange(ParameteredCommands.Keys.ToList());
+
+			return list.ToArray();
 		}
 	}
 }
