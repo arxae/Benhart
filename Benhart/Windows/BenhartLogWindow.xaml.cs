@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Reflection;
+using System.Windows.Controls;
 
 namespace BenhartLog.Windows
 {
@@ -17,6 +18,12 @@ namespace BenhartLog.Windows
 			Benhart.RegisterCommandWithParameters<string>("message", Benhart.Message);
 			Benhart.RegisterCommandWithParameters<string>("warning", Benhart.Warning);
 			Benhart.RegisterCommand("hide", Benhart.Hide);
+
+			var assembly = Assembly.GetCallingAssembly().GetName();
+			Benhart.RegisterCommand("version", () =>
+			{
+				Benhart.Info($"Bernhart Logging Window v{assembly.Version}");
+			});
 
 			// TODO: Temporary fix because the XAML event threw errors
 			Closing += Window_Closing;

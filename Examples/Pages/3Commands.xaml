@@ -1,0 +1,23 @@
+﻿<Page x:Class="Examples.Pages._3Commands"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Examples.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="_3Commands">
+
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+		
+		<TextBlock Grid.Row="0" TextWrapping="Wrap" Text="The following (case sensitive) commands are added by default: message, debug, info, warning, error. To echo to the console (with text as a parameter behind it, eg: message this is a test" />
+		<TextBlock Grid.Row="1" TextWrapping="Wrap" Margin="0 10 0 0" Text="This page adds a custom command called TestCommand (no parameters) and echo (with 1 parameter)" />
+		
+		<TextBlock Grid.Row="2" TextWrapping="Wrap" Margin="0 10 0 0" Text="All commands receive the parameters in a single string with spaces. This might be changed later" />
+    </Grid>
+</Page>
