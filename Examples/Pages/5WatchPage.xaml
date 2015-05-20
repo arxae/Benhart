@@ -1,0 +1,33 @@
+﻿<Page x:Class="Examples.Pages._5WatchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Examples.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="_5WatchPage">
+
+	<StackPanel>
+		<TextBlock TextWrapping="Wrap">Watches allow you to watch certain variables in realtime. You do however, have to update the values yourself. This is easily done by just setting the watch again</TextBlock>
+		<Grid Margin="0 10 0 0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto" />
+				<RowDefinition Height="auto" />
+				<RowDefinition Height="auto" />
+			</Grid.RowDefinitions>
+
+			<Label Grid.Row="0" Grid.Column="0" Content="Watch name: " />
+			<TextBox Name="TxtWatchName" Grid.Row="0" Grid.Column="1" />
+
+			<Label Grid.Row="1" Grid.Column="0" Content="Watch name: " />
+			<TextBox Name="TxtWatchValue" Grid.Row="1" Grid.Column="1" />
+			
+			<Button Name="BtnSetUpdateWatch" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Set/Update" Click="BtnSetUpdateWatch_Click" />
+		</Grid>
+	</StackPanel>
+</Page>

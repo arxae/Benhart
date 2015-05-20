@@ -19,6 +19,9 @@
 			<TabItem Header="Markdown Output">
 				<Frame Source="Pages/4MarkdownOutputPage.xaml" />
 			</TabItem>
+			<TabItem Header="Watches">
+				<Frame Source="Pages/5WatchPage.xaml" />
+			</TabItem>
 		</TabControl>
 	</Grid>
 </Window>
