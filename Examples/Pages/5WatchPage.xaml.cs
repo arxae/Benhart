@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using BenhartLog;
 
 namespace Examples.Pages
@@ -7,7 +6,7 @@ namespace Examples.Pages
 	/// <summary>
 	/// Interaction logic for _5WatchPage.xaml
 	/// </summary>
-	public partial class _5WatchPage : Page
+	public partial class _5WatchPage
 	{
 		public _5WatchPage()
 		{

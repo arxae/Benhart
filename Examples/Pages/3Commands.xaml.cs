@@ -1,12 +1,11 @@
-﻿using System.Windows.Controls;
-using BenhartLog;
+﻿using BenhartLog;
 
 namespace Examples.Pages
 {
 	/// <summary>
 	/// Interaction logic for _3Commands.xaml
 	/// </summary>
-	public partial class _3Commands : Page
+	public partial class _3Commands
 	{
 		public _3Commands()
 		{

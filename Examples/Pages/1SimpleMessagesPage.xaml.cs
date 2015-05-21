@@ -7,7 +7,7 @@ namespace Examples.Pages
 	/// <summary>
 	/// Interaction logic for _1SimpleMessagesPage.xaml
 	/// </summary>
-	public partial class _1SimpleMessagesPage : Page
+	public partial class _1SimpleMessagesPage
 	{
 		public _1SimpleMessagesPage()
 		{

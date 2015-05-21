@@ -6,7 +6,7 @@ namespace Examples.Pages
 	/// <summary>
 	/// Interaction logic for _4MarkdownOutputPage.xaml
 	/// </summary>
-	public partial class _4MarkdownOutputPage : Page
+	public partial class _4MarkdownOutputPage
 	{
 		public _4MarkdownOutputPage()
 		{
