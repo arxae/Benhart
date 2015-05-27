@@ -306,6 +306,26 @@ namespace BenhartLog
 		}
 
 		/// <summary>
+		/// Removes a parameterless command
+		/// </summary>
+		/// <param name="command"></param>
+		/// <returns></returns>
+		public static bool UnregisterCommand(string command)
+		{
+			return CommandManager.UnregisterCommand(command);
+		}
+
+		/// <summary>
+		/// Removes a command with parameters
+		/// </summary>
+		/// <param name="command"></param>
+		/// <returns></returns>
+		public static bool UnregisterCommandWithParamters(string command)
+		{
+			return CommandManager.UnregisterCommandWithParamters(command);
+		}
+
+		/// <summary>
 		/// Returns an array of all the usable commands
 		/// </summary>
 		/// <returns></returns>

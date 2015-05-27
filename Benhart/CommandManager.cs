@@ -36,6 +36,32 @@ namespace BenhartLog
 		}
 
 		/// <summary>
+		/// Removes a parameterless command
+		/// </summary>
+		/// <param name="command"></param>
+		/// <returns></returns>
+		internal static bool UnregisterCommand(string command)
+		{
+			if (!Commands.ContainsKey(command)) return false;
+
+			Commands.Remove(command);
+			return true;
+		}
+
+		/// <summary>
+		/// Removes a command with parameters
+		/// </summary>
+		/// <param name="command"></param>
+		/// <returns></returns>
+		internal static bool UnregisterCommandWithParamters(string command)
+		{
+			if (!ParameteredCommands.ContainsKey(command)) return false;
+
+			ParameteredCommands.Remove(command);
+			return true;
+		}
+
+		/// <summary>
 		/// Runs a command
 		/// </summary>
 		/// <param name="command"></param>
