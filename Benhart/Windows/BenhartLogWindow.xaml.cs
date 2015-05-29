@@ -53,6 +53,8 @@ namespace BenhartLog.Windows
 			Benhart.LogPage = new Pages.MainLogWindowPage();
 			MainTabFrame.Content = Benhart.LogPage;
 			MainTab.Visibility = Visibility.Collapsed;
+
+			Benhart.Info(BenhartWindowOptions.StartupText);
 		}
 
 		// Prevent the window itself from closing unless the propper signal has been given

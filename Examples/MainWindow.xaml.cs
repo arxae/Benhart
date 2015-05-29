@@ -12,6 +12,7 @@ namespace Examples
 		public MainWindow()
 		{
 			InitializeComponent();
+			BenhartWindowOptions.StartupText = "Benhart Example Application";
 			Benhart.AttachTo(this);
 		}
 

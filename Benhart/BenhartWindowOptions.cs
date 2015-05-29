@@ -94,5 +94,10 @@ namespace BenhartLog
 			get { return Benhart.Window.Title; }
 			set { Benhart.Window.Title = value; }
 		}
+
+		/// <summary>
+		/// Sets the startup text
+		/// </summary>
+		public static string StartupText { get; set; } = $"Benhart v{System.Reflection.Assembly.GetCallingAssembly().GetName().Version}";
 	}
 }
