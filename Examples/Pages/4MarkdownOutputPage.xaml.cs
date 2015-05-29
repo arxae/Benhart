@@ -4,7 +4,7 @@ using BenhartLog;
 namespace Examples.Pages
 {
 	/// <summary>
-	/// Interaction logic for _4MarkdownOutputPage.xaml
+	/// This page shows how to use the Markdown output
 	/// </summary>
 	public partial class _4MarkdownOutputPage
 	{
@@ -16,6 +16,7 @@ namespace Examples.Pages
 		private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
 			var btn = (Button)sender;
+
 			var planets = new[] { "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune" };
 			var tableData = new[]
 			{

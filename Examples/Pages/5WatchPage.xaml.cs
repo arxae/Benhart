@@ -4,7 +4,8 @@ using BenhartLog;
 namespace Examples.Pages
 {
 	/// <summary>
-	/// Interaction logic for _5WatchPage.xaml
+	/// This page shows how to set watches.
+	/// Watches can be updated by setting the watch again using the same name
 	/// </summary>
 	public partial class _5WatchPage
 	{

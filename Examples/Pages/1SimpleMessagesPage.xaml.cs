@@ -5,7 +5,7 @@ using BenhartLog;
 namespace Examples.Pages
 {
 	/// <summary>
-	/// Interaction logic for _1SimpleMessagesPage.xaml
+	/// This example will just output the inputted text using the specified preset style
 	/// </summary>
 	public partial class _1SimpleMessagesPage
 	{
